@@ -1,0 +1,42 @@
+.header{
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: space-between;
+    display: flex;
+    background-color: rgb(99, 113, 114);
+    color: white;
+    width: auto;
+    
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: normal;
+
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.nav-button:hover {
+    color: #61dafb;
+    transform: translateY(-2px);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+}
+
+
+.nav-button.active {
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+}

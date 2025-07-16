@@ -1,0 +1,27 @@
+.Footer{
+    padding: 2rem 0;
+    background: grey;
+    color: white;
+    margin-top: auto;
+    
+
+}
+
+
+.FooterButton{
+    background: none;
+    border: none;
+    margin-left: 1.5rem;
+    color:aliceblue;
+}
+
+.FooterButton:hover{
+    color: aqua;
+    transform: translateY(-2px)
+}
+
+.FooterButton.active{
+    color: aqua;
+    border-bottom: 2px solid aqua;
+}
+
