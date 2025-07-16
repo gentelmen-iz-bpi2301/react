@@ -67,15 +67,23 @@ const Home = () => {
         <div className="HomePage">
             <h1 className="HomeTitle">Тапай монетку пж</h1>
             <h2 className="HomeText">{clicks}</h2>
-            <button className="autoClicks" onClick={autoClick} disabled={disAutoButton}>Автокклик</button>
-            <button className="resetAutoBtn" onClick={resetAuto}>Сбросить автоклик</button>
-            <button className="upgradeBtn" onClick={isUpgrade} disabled = {disMultiButton}>Мультиклик</button>
-            <button className="resetUpgrades" onClick={resetUpgrade}>Сбросить улучшение</button>
             <div className="btn-container">
-                <button className="clickerButton" onClick={increment}>
-                    <img className="btn-img" src={clickerImage} alt="Картинка-кнопка" />
-                </button>
-                <button className="resetbtn" onClick={resetClicks}>Сбросить</button>
+                <div className="autoclick">
+                    <h4 className="autoPrice">Стоимость: {priceAuto} (пока не знаю как сделать так, чтобы он брался только один раз)</h4>
+                    <button className="autoClicks" onClick={autoClick} disabled={disAutoButton}>Автокклик</button>
+                    <button className="resetAutoBtn" onClick={resetAuto}>Сбросить автоклик</button>
+                </div>
+                <div className="milticlick">
+                    <h4 className="multiPrice">Стоимость: {priceMulti}</h4>
+                    <button className="upgradeBtn" onClick={isUpgrade} disabled = {disMultiButton}>Мультиклик</button>
+                    <button className="resetUpgrades" onClick={resetUpgrade}>Сбросить улучшение</button>
+                </div>
+                <div className="clikcer">
+                    <button className="clickerButton" onClick={increment}>
+                        <img className="btn-img" src={clickerImage} alt="Картинка-кнопка" />
+                    </button>
+                    <button className="resetbtn" onClick={resetClicks}>Сбросить</button>
+                </div>
             </div>
         </div><Footer className="HomeFooter"/></>
         
