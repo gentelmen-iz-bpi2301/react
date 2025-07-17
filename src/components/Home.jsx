@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import Footer from "./Footer.jsx";
-import Header from "./Header.jsx";
 import "./styles/Home.css";
 import clickerImage from "./styles/images/clicker-image.jpg";
 const Home = () => {
     const [clicks, setClicks] = useState(0)
     const [upgrade, setUpgrade] = useState(1)
     const [priceMulti, setPriceMulti] = useState(10)
-    const [priceAuto, setPriceAuto] = useState(20)
     const [isAuto, setIsAuto] = useState(false)
+    const priceAuto = 20
     let disMultiButton = true
     let disAutoButton = true
     
@@ -40,16 +38,14 @@ const Home = () => {
         if (clicks >= priceAuto){
             setIsAuto(true)
         }
-        setPriceAuto(priceAuto * 3);
         setClicks(clicks - priceAuto)
     }
     const resetAuto = () => {
         setIsAuto(false)
-        setPriceAuto( 20)
     }
     const isUpgrade = () => {
         if (clicks >= priceMulti){
-        setUpgrade(upgrade + 1);
+        setUpgrade(upgrade * 2);
         };
         setPriceMulti(priceMulti * 2);
         setClicks(clicks - priceMulti);
@@ -63,14 +59,14 @@ const Home = () => {
     }
 
     return(
-        <><Header />
+        
         <div className="HomePage">
             <h1 className="HomeTitle">Тапай монетку пж</h1>
             <h2 className="HomeText">{clicks}</h2>
             <div className="btn-container">
                 <div className="autoclick">
-                    <h4 className="autoPrice">Стоимость: {priceAuto} (пока не знаю как сделать так, чтобы он брался только один раз)</h4>
-                    <button className="autoClicks" onClick={autoClick} disabled={disAutoButton}>Автокклик</button>
+                    {!isAuto && <h4 className="autoPrice">Стоимость: {priceAuto}</h4>}
+                    {!isAuto && <button className="autoClicks" onClick={autoClick} disabled={disAutoButton}>Автокклик</button>}
                     <button className="resetAutoBtn" onClick={resetAuto}>Сбросить автоклик</button>
                 </div>
                 <div className="milticlick">
@@ -85,7 +81,7 @@ const Home = () => {
                     <button className="resetbtn" onClick={resetClicks}>Сбросить</button>
                 </div>
             </div>
-        </div><Footer className="HomeFooter"/></>
+        </div>
         
         );
 };
